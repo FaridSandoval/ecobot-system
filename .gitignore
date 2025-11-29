@@ -1,0 +1,11 @@
+# Ignorar carpetas de datos pesados
+data/
+!data/sample_images/
+__pycache__/
+*.ipynb_checkpoints
+.DS_Store
+.env
+# Ignorar pesos muy pesados si superan 100MB
+*.pt
+*.pth
+runs/
