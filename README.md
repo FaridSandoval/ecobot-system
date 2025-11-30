@@ -43,7 +43,7 @@ ecobot-system/
 ├── results/    # Gráficas de rendimiento, matrices de confusión.
 ├── src/        # Código fuente para despliegue en Raspberry Pi.
 └── data/       # (Local) Datasets crudos y procesados.
-´´´
+```
 
 ## Instalación y Uso
 (Sección en construcción para el despliegue del script src/inference.py)
