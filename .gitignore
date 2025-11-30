@@ -1,11 +1,39 @@
-# Ignorar carpetas de datos pesados
-data/
-!data/sample_images/
+# --- Archivos de Sistema y Entorno ---
 __pycache__/
-*.ipynb_checkpoints
+*.py[cod]
+*$py.class
 .DS_Store
+Thumbs.db
+
+# --- Entornos Virtuales (Si los creas en el futuro) ---
+env/
+venv/
 .env
-# Ignorar pesos muy pesados si superan 100MB
-*.pt
-*.pth
+
+# --- Datos (CRÍTICO: Nunca subir datos crudos) ---
+data/
+*.zip
+*.tar.gz
+*.rar
+
+# --- Imágenes y Videos sueltos en la raíz ---
+# (Para evitar subir pruebas personales)
+*.jpg
+*.jpeg
+*.png
+*.mp4
+*.avi
+
+# --- Excepciones (¡Estas imágenes SÍ queremos subirlas!) ---
+!results/*.png
+!docs/*.png
+!*.png 
+
+# --- Modelos ---
+# Si el modelo pesa más de 100MB, GitHub lo rechazará.
+# El YOLO Nano pesa ~6MB, así que lo dejaremos pasar.
+# models/*.pt
+
+# --- Logs de entrenamiento ---
 runs/
+wandb/
