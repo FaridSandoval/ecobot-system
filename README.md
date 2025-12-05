@@ -1,5 +1,5 @@
 # Ecobot Vision System: Edge AI for Waste Classification
-This project is a part of the **Technological Innovation Project 1** course in the Applied Artificial Intelligence Master, Universidad Icesi, Cali, Colombia.
+This project is a part of the **Technological Innovation Project 2** course in the Applied Artificial Intelligence Master, Universidad Icesi, Cali, Colombia.
 
 #### -- Project Status: [Active]
 
