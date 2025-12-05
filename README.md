@@ -2,9 +2,6 @@ ________________________________________________________________________________
 
 # Project Template
 This is the template for the Project I course at the IA Master, Universidad Icesi, Cali Colombia.
-
-*Instructions: Edit this template filling in the titles, information, and links!*
-## Remove this table after updating your project's information
 ____________________________________________________________________________________
 
 # Ecobot Vision System: Edge AI for Waste Classification
