@@ -1,58 +1,103 @@
-# Ecobot Vision System
+____________________________________________________________________________________
 
-> Sistema de visión artificial optimizado para la clasificación automática de residuos en Máquinas de Vending Inverso (RVM) en Colombia.
+# Project Template
+This is the template for the Project I course at the IA Master, Universidad Icesi, Cali Colombia.
 
-![Status](https://img.shields.io/badge/Status-En_Desarrollo-yellow)
-![Python](https://img.shields.io/badge/Python-3.10-blue)
-![Model](https://img.shields.io/badge/Model-YOLOv8_Nano-green)
-![Hardware](https://img.shields.io/badge/Device-Raspberry_Pi_3-red)
+*Instructions: Edit this template filling in the titles, information, and links!*
+## Remove this table after updating your project's information
+____________________________________________________________________________________
 
-## Descripción del Proyecto
-Este proyecto busca modernizar la infraestructura de reciclaje de **Ecobot** mediante la implementación de Deep Learning en el borde (Edge Computing). El sistema clasifica en tiempo real los residuos depositados en las máquinas RVM para automatizar la trazabilidad y mejorar la experiencia de usuario.
+# Ecobot Vision System: Edge AI for Waste Classification
+This project is a part of the **Technological Innovation Project 1** course in the Applied Artificial Intelligence Master, Universidad Icesi, Cali, Colombia.
 
-### Clases a Detectar
-1. **Botella PET** (Transparente/Color)
-2. **Lata** (Aluminio)
-3. **Tetrapack**
-4. **Botellita de Amor** (Botella rellena de plásticos flexibles)
+#### -- Project Status: [Active]
 
-## Arquitectura y Modelado
-Debido a las limitaciones de hardware (Raspberry Pi 3) y las condiciones de iluminación variables en las máquinas actuales, se ha optado por una arquitectura basada en eventos:
+## Contributing Members
 
-* **Trigger:** Sensor físico detecta ingreso.
-* **Captura:** Cámara controlada + Iluminación LED sincronizada (Flash).
-* **Inferencia:** Modelo YOLOv8 Nano (Optimizado para velocidad).
+**Team Leader: Farid Sandoval (@FaridSandoval)**
+**Instructor: Milton Orlando Sarria Paja & Jose Andres Moncada Quintero**
 
-### Métricas de Rendimiento (Validación)
-El modelo actual **YOLOv8 Nano** ha alcanzado resultados sobresalientes en el set de validación:
+#### Other Members:
 
-| Métrica | Valor | Interpretación |
+|Name     |  Role   | 
+|---------|-----------------|
+|Andrés Cano| Developer / Hardware Specialist |
+|Daniel García| Data Scientist / ML Engineer |
+
+## Contact
+* Feel free to contact the team leader with any questions or if you are interested in contributing!
+
+## Project Intro/Objective
+The purpose of this project is to modernize **Ecobot's** recycling infrastructure by implementing Deep Learning at the edge (Edge Computing). [cite_start]The system classifies waste deposited in Reverse Vending Machines (RVM) in real-time to automate traceability and improve user experience.
+
+### Partner
+* **Ecobot Colombia**
+* Website: [ecobot.com.co](https://ecobot.com.co)
+* Partner contact: ian.rodriguez@u.icesi.edu.co
+
+### Methods Used
+* Deep Learning (Object Detection)
+* Edge Computing (Inference on Device)
+* Computer Vision
+* Event-Driven Architecture
+
+### Technologies
+* [cite_start]**Hardware:** Raspberry Pi 3, Pi Camera, IR/Physical Sensors.
+* [cite_start]**Software:** Python 3.10.
+* **Libraries:** Ultralytics (YOLOv8), OpenCV, Pandas, Numpy, Torch.
+* [cite_start]**Model:** YOLOv8 Nano (Optimized for speed).
+
+## Project Description
+This project addresses the challenge of deploying modern Artificial Intelligence models on hardware with limited resources. [cite_start]Since the current machines operate on a **Raspberry Pi 3**, processing a continuous video stream for detection is not viable due to computational constraints.
+
+To solve this, we opted for an **Event-Driven Architecture**:
+1.  [cite_start]**Trigger:** A physical sensor detects object entry.
+2.  [cite_start]**Capture:** Synchronized LED lighting (Flash) is activated, and a static photo is taken.
+3.  [cite_start]**Inference:** The YOLOv8 Nano model processes the single image.
+
+### [cite_start]Classes to Detect 
+1.  **PET Bottle** (Transparent/Color)
+2.  **Can** (Aluminum)
+3.  **Tetrapack**
+4.  **"Botellita de Amor"** (Bottle filled with flexible plastics)
+
+### Performance Metrics (Validation)
+[cite_start]The current **YOLOv8 Nano** model has achieved outstanding results on the validation set:
+
+| Metric | Value | Interpretation |
 | :--- | :--- | :--- |
-| **mAP50** | **99.15%** | Precisión global casi perfecta. |
-| **mAP50-95** | **86.98%** | Alta precisión en el ajuste de las cajas (bounding boxes). |
-| **Recall (PET)** | **100%** | No se pierden botellas transparentes (clase crítica). |
-| **Tiempo** | **~9.5 ms** | Apto para inferencia en tiempo real. |
+| **mAP50** | **99.15%** | Near-perfect global precision. |
+| **mAP50-95** | **86.98%** | High precision in bounding box adjustments. |
+| **Recall (PET)** | **100%** | No transparent bottles are missed (critical class). |
+| **Inference Time** | **~9.5 ms** | Suitable for real-time inference. |
 
-## Estructura del Repositorio
+## Getting Started
+Instructions for contributors to deploy the inference system on the Raspberry Pi.
 
-```text
-ecobot-system/
-├── docs/       # Documentación del proyecto, arquitectura y papers.
-├── models/     # Pesos entrenados (.pt, .onnx).
-├── notebooks/  # Experimentos de entrenamiento (Colab/Jupyter).
-├── results/    # Gráficas de rendimiento, matrices de confusión.
-├── src/        # Código fuente para despliegue en Raspberry Pi.
-└── data/       # (Local) Datasets crudos y procesados.
-```
+1.  **Clone the repository:**
+    ```bash
+    git clone [repository-url]
+    cd ecobot-system
+    ```
 
-## Instalación y Uso
-(Sección en construcción para el despliegue del script src/inference.py)
+2.  **Raw Data:**
+    Raw and processed datasets are kept locally in the `data/` folder due to size and privacy constraints.
 
-    Clonar el repositorio.
-    Instalar dependencias: pip install -r requirements.txt
-    Ejecutar inferencia.
+3.  **Install Dependencies:**
+    The project requires specific libraries for computer vision and tensor handling.
+    ```bash
+    pip install -r requirements.txt
+    ```
+    *Dependencies include `ultralytics`, `torch`, `opencv-python-headless`, `matplotlib`, `pandas`, and `numpy`.*
 
-## Equipo
-* Andrés Cano
-* Daniel García
-* Farid Sandoval
+4.  **Run Inference (Simulation):**
+    To test the system without the physical sensor hardware, execute the inference script:
+    ```bash
+    python src/inference.py
+    ```
+    *This script loads the `best.pt` model and processes a test image to simulate a sensor event.*
+
+## Featured Notebooks/Analysis/Deliverables
+* [cite_start][Training Experiment - YOLOv8](notebooks/Yolov8.ipynb): Notebook used for training and fine-tuning the model, including hyperparameter setup.
+* [Inference Script](src/inference.py): Production source code for deployment on Raspberry Pi.
+* [Metrics Report](results/): Performance charts and confusion matrices.
