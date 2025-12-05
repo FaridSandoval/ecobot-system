@@ -1,9 +1,3 @@
-____________________________________________________________________________________
-
-# Project Template
-This is the template for the Project I course at the IA Master, Universidad Icesi, Cali Colombia.
-____________________________________________________________________________________
-
 # Ecobot Vision System: Edge AI for Waste Classification
 This project is a part of the **Technological Innovation Project 1** course in the Applied Artificial Intelligence Master, Universidad Icesi, Cali, Colombia.
 
@@ -39,27 +33,27 @@ The purpose of this project is to modernize **Ecobot's** recycling infrastructur
 * Event-Driven Architecture
 
 ### Technologies
-* [cite_start]**Hardware:** Raspberry Pi 3, Pi Camera, IR/Physical Sensors.
-* [cite_start]**Software:** Python 3.10.
+* **Hardware:** Raspberry Pi 3, Pi Camera, IR/Physical Sensors.
+* **Software:** Python 3.10.
 * **Libraries:** Ultralytics (YOLOv8), OpenCV, Pandas, Numpy, Torch.
-* [cite_start]**Model:** YOLOv8 Nano (Optimized for speed).
+* **Model:** YOLOv8 Nano (Optimized for speed).
 
 ## Project Description
 This project addresses the challenge of deploying modern Artificial Intelligence models on hardware with limited resources. [cite_start]Since the current machines operate on a **Raspberry Pi 3**, processing a continuous video stream for detection is not viable due to computational constraints.
 
 To solve this, we opted for an **Event-Driven Architecture**:
-1.  [cite_start]**Trigger:** A physical sensor detects object entry.
-2.  [cite_start]**Capture:** Synchronized LED lighting (Flash) is activated, and a static photo is taken.
-3.  [cite_start]**Inference:** The YOLOv8 Nano model processes the single image.
+1.  **Trigger:** A physical sensor detects object entry.
+2.  **Capture:** Synchronized LED lighting (Flash) is activated, and a static photo is taken.
+3.  **Inference:** The YOLOv8 Nano model processes the single image.
 
-### [cite_start]Classes to Detect 
+### Classes to Detect 
 1.  **PET Bottle** (Transparent/Color)
 2.  **Can** (Aluminum)
 3.  **Tetrapack**
 4.  **"Botellita de Amor"** (Bottle filled with flexible plastics)
 
 ### Performance Metrics (Validation)
-[cite_start]The current **YOLOv8 Nano** model has achieved outstanding results on the validation set:
+The current **YOLOv8 Nano** model has achieved outstanding results on the validation set:
 
 | Metric | Value | Interpretation |
 | :--- | :--- | :--- |
@@ -95,6 +89,6 @@ Instructions for contributors to deploy the inference system on the Raspberry Pi
     *This script loads the `best.pt` model and processes a test image to simulate a sensor event.*
 
 ## Featured Notebooks/Analysis/Deliverables
-* [cite_start][Training Experiment - YOLOv8](notebooks/Yolov8.ipynb): Notebook used for training and fine-tuning the model, including hyperparameter setup.
+* [Training Experiment - YOLOv8](notebooks/Yolov8.ipynb): Notebook used for training and fine-tuning the model, including hyperparameter setup.
 * [Inference Script](src/inference.py): Production source code for deployment on Raspberry Pi.
 * [Metrics Report](results/): Performance charts and confusion matrices.
